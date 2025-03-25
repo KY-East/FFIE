@@ -1,0 +1,55 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --primary: #00ff9d;
+  --secondary: #ff3366;
+  --accent: #ffcc00;
+  --background: #121212;
+  --foreground: #ffffff;
+  --card: #1a1a1a;
+  --card-foreground: #ffffff;
+}
+
+@layer base {
+  body {
+    @apply bg-[var(--background)] text-[var(--foreground)];
+    font-family: 'Roboto', 'Noto Sans SC', sans-serif;
+  }
+
+  h1, h2, h3, h4, h5, h6 {
+    @apply font-display;
+  }
+}
+
+@layer components {
+  .glow {
+    text-shadow: 0 0 10px var(--primary), 0 0 20px var(--primary);
+  }
+  
+  .card-hover {
+    @apply transition-all duration-300;
+  }
+  
+  .card-hover:hover {
+    @apply transform scale-[1.02] shadow-lg;
+    box-shadow: 0 0 15px rgba(0, 255, 157, 0.3);
+  }
+  
+  .heavy-button {
+    @apply bg-primary text-black font-bold py-2 px-4 rounded shadow-md transition-all duration-200;
+  }
+  
+  .heavy-button:active {
+    @apply transform scale-95 shadow-sm;
+  }
+  
+  .meme-text {
+    font-family: 'Impact', sans-serif;
+    text-transform: uppercase;
+    color: white;
+    text-shadow: 2px 2px 0 #000, -2px -2px 0 #000, 2px -2px 0 #000, -2px 2px 0 #000;
+    letter-spacing: 1px;
+  }
+} 
